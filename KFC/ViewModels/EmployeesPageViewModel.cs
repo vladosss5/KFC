@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reactive;
 using Avalonia.Controls;
 using Avalonia.Platform.Storage;
+using DynamicData;
 using KFC.Context;
 using KFC.Models;
 using KFC.Views;
@@ -200,6 +201,7 @@ public class EmployeesPageViewModel : PageViewModelBase
             _newUser.EmplContract = ContractProgectPath;
             File.Copy(ImagePath, DestImagePath, true);
             File.Copy(ContractPath, DestContractPath, true);
+            Employees.Add(_newUser);
             Helper.GetContext().Users.Add(_newUser);
             Helper.GetContext().SaveChanges();
             MessageBoxManager.GetMessageBoxStandard("Успех", "Сотрудник добавлен", ButtonEnum.Ok, Icon.Success).ShowAsync();
