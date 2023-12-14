@@ -39,12 +39,12 @@
                                         Height="30" Margin="5"
                                         Command="{Binding OpenOrdersPage}"/>
                     
-                                <!-- <Button Content="Создать отчёт" HorizontalContentAlignment="Center"  -->
-                                <!--         VerticalContentAlignment="Center" -->
-                                <!--         HorizontalAlignment="Stretch" -->
-                                <!--         Height="30" Margin="5" -->
-                                <!--         Command="{Binding CreateReport}"  -->
-                                <!--         CommandParameter="{Binding ElementName=ThisWindow}"/> -->
+                                <Button Content="Создать отчёт" HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        Height="30" Margin="5"
+                                        Command="{Binding CreateReport}"
+                                        CommandParameter="{Binding ElementName=ThisWindow}"/>
                     
                                 <Button Content="Профиль" HorizontalContentAlignment="Center" 
                                         VerticalContentAlignment="Center"
@@ -52,12 +52,12 @@
                                         Height="30" Margin="5"
                                         Command="{Binding OpenProfilePage}"/>
                                 
-                                <!-- <Button Content="Выйти" HorizontalContentAlignment="Center"  -->
-                                <!--         VerticalContentAlignment="Center" -->
-                                <!--         HorizontalAlignment="Stretch" -->
-                                <!--         Height="30" Margin="5" -->
-                                <!--         Command="{Binding ExitProfile}" -->
-                                <!--         CommandParameter="{Binding ElementName=ThisWindow}"/> -->
+                                <Button Content="Выйти" HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center"
+                                        HorizontalAlignment="Stretch"
+                                        Height="30" Margin="5"
+                                        Command="{Binding ExitProfile}"
+                                        CommandParameter="{Binding ElementName=ThisWindow}"/>
                         </StackPanel>
                 </Border>
                 

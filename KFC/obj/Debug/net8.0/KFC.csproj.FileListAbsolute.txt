@@ -157,3 +157,6 @@ C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\KFC.pdb
 C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\KFC.csproj.CopyComplete
 C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\KFC.genruntimeconfig.cache
 C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\ref\KFC.dll
+C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\KFC.sourcelink.json
+C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\obj\Debug\net8.0\KFC.csproj.ResolveComReference.cache
