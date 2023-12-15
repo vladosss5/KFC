@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tjskNURixzGGj1bzw0Ary9cpHh3sc8bdVyaBId/s2EErnK3+AmDJEMtZV6jEMDPfBONJDHn28hs6MzVzZrFWJw==",
+  "dgSpecHash": "IlOFQVWiKygaHXziVHzQqruVD9HsMKVDjQU/iDwr/fOGuSL9sKcKDr6JbB/0ovEiKZ70yYQmkMKj7L6YN+ghuQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\v-pc\\Documents\\yчёба\\Avalonia\\KFC\\KFC\\KFC.csproj",
+  "projectFilePath": "C:\\Users\\v-pc\\Documents\\yчёба\\8лаба\\KFC\\KFC\\KFC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\v-pc\\.nuget\\packages\\avalonia\\11.0.6\\avalonia.11.0.6.nupkg.sha512",
     "C:\\Users\\v-pc\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",

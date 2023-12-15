@@ -11,7 +11,7 @@
     <ItemGroup>
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
-        <AvaloniaResource Include="AssetsUser\**" />
+		<AvaloniaResource Include="AssetsUser\**" />
     </ItemGroup>
 
     <ItemGroup>

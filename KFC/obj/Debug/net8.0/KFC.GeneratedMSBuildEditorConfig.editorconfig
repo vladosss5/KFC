@@ -13,36 +13,42 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = KFC
-build_property.ProjectDir = C:\Users\v-pc\Documents\yчёба\Avalonia\KFC\KFC\
+build_property.ProjectDir = C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/App.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/AdminMainView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/AdminMainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/AuthorizationView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/AuthorizationView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/CookMainView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/CookMainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/EmployeeInfoView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/EmployeeInfoView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/EmployeesPageView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/EmployeesPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/MenuPageView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/MenuPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/OrdersPageView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/OrderInfoView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/ProfilePageView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/OrdersCookPageView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/v-pc/Documents/yчёба/Avalonia/KFC/KFC/Views/WaiterMainView.axaml]
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/OrdersPageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/ProfilePageView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/v-pc/Documents/yчёба/8лаба/KFC/KFC/Views/WaiterMainView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

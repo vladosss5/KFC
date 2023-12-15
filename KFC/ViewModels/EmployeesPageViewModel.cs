@@ -135,6 +135,12 @@ public class EmployeesPageViewModel : PageViewModelBase
         protected set => throw new NotSupportedException();
     }
     
+    public override bool OpenOrdersCookPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
     public ReactiveCommand<Unit, Unit> AddEmployee { get; }
     public ReactiveCommand<Window, Unit> SelectImageEmployee { get; }
     public ReactiveCommand<Window, Unit> SelectEmployeeContract { get; }

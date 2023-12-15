@@ -13,15 +13,11 @@ public partial class Order
 
     public DateTime DateAndTime { get; set; }
 
-    public int IdStatus { get; set; }
+    public string Status { get; set; } = null!;
 
-    public int IdPayment { get; set; }
+    public string? TypePayment { get; set; }
 
     public int CountClient { get; set; }
-
-    public virtual Payment IdPaymentNavigation { get; set; } = null!;
-
-    public virtual SatatusesOrder IdStatusNavigation { get; set; } = null!;
 
     public virtual ICollection<OrderDish> OrderDishes { get; set; } = new List<OrderDish>();
 

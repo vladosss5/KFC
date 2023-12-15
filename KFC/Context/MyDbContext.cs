@@ -22,11 +22,7 @@ public partial class MyDbContext : DbContext
 
     public virtual DbSet<OrderDish> OrderDishes { get; set; }
 
-    public virtual DbSet<Payment> Payments { get; set; }
-
     public virtual DbSet<Post> Posts { get; set; }
-
-    public virtual DbSet<SatatusesOrder> SatatusesOrders { get; set; }
 
     public virtual DbSet<StatusesUser> StatusesUsers { get; set; }
 
@@ -39,7 +35,6 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<WorkShift> WorkShifts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=toor;database=KFas;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -59,16 +54,8 @@ public partial class MyDbContext : DbContext
             entity.Property(e => e.IdOrder).UseIdentityAlwaysColumn();
             entity.Property(e => e.DateAndTime).HasColumnType("timestamp without time zone");
             entity.Property(e => e.Place).HasMaxLength(20);
-
-            entity.HasOne(d => d.IdPaymentNavigation).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.IdPayment)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Orders_Payments_IdPayment_fk");
-
-            entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.Orders)
-                .HasForeignKey(d => d.IdStatus)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("Orders_SatatusesOrder_IdStatus_fk");
+            entity.Property(e => e.Status).HasMaxLength(30);
+            entity.Property(e => e.TypePayment).HasMaxLength(30);
         });
 
         modelBuilder.Entity<OrderDish>(entity =>
@@ -90,32 +77,12 @@ public partial class MyDbContext : DbContext
                 .HasConstraintName("OrderDish_Orders_IdOrder_fk");
         });
 
-        modelBuilder.Entity<Payment>(entity =>
-        {
-            entity.HasKey(e => e.IdPayment).HasName("Payments_pk");
-
-            entity.Property(e => e.IdPayment).UseIdentityAlwaysColumn();
-            entity.Property(e => e.DateAndTime).HasColumnType("timestamp without time zone");
-            entity.Property(e => e.Status).HasMaxLength(30);
-            entity.Property(e => e.Type).HasColumnType("character varying");
-        });
-
         modelBuilder.Entity<Post>(entity =>
         {
             entity.HasKey(e => e.IdPost).HasName("Posts_pk");
 
             entity.Property(e => e.IdPost).UseIdentityAlwaysColumn();
             entity.Property(e => e.Name).HasMaxLength(20);
-        });
-
-        modelBuilder.Entity<SatatusesOrder>(entity =>
-        {
-            entity.HasKey(e => e.IdStatus).HasName("SatatusesOrder_pk");
-
-            entity.ToTable("SatatusesOrder");
-
-            entity.Property(e => e.IdStatus).UseIdentityAlwaysColumn();
-            entity.Property(e => e.Name).HasMaxLength(30);
         });
 
         modelBuilder.Entity<StatusesUser>(entity =>

@@ -37,6 +37,12 @@ public class ProfilePageViewModel : PageViewModelBase
         protected set => throw new NotSupportedException();
     }
     
+    public override bool OpenOrdersCookPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
     
     public override bool OpenOrdersPage
     {

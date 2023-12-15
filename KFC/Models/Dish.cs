@@ -11,7 +11,6 @@ public partial class Dish
     public string Name { get; set; } = null!;
 
     public double Price { get; set; }
-    
     [NotMapped] public int CountDishes { get; set; } = 1;
 
     public virtual ICollection<OrderDish> OrderDishes { get; set; } = new List<OrderDish>();
