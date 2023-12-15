@@ -140,6 +140,18 @@ public class EmployeesPageViewModel : PageViewModelBase
         get => true;
         protected set => throw new NotSupportedException();
     }
+
+    public override bool OpenNewOrderWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
+    public override bool OpenOrdersWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
     
     public ReactiveCommand<Unit, Unit> AddEmployee { get; }
     public ReactiveCommand<Window, Unit> SelectImageEmployee { get; }

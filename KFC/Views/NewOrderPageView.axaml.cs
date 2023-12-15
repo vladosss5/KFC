@@ -5,11 +5,11 @@ using KFC.ViewModels;
 
 namespace KFC.Views;
 
-public partial class WaiterMainView : Window
+public partial class NewOrderPageView : UserControl
 {
-    public WaiterMainView()
+    public NewOrderPageView()
     {
         InitializeComponent();
-        DataContext = new WaiterMainViewModel();
+        DataContext = new NewOrderPageViewModel();
     }
 }

@@ -50,6 +50,18 @@ public class ProfilePageViewModel : PageViewModelBase
         protected set => throw new NotSupportedException();
     }
     
+    public override bool OpenNewOrderWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
+    public override bool OpenOrdersWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
     public string OldPassword
     {
         get => _oldpassword;

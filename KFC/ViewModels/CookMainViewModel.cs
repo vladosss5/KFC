@@ -14,8 +14,6 @@ namespace KFC.ViewModels;
 
 public class CookMainViewModel : ViewModelBase
 {
-    public static User AuthUserNow { get; set; }
-    
     private MyDbContext db = new MyDbContext();
     
     private PageViewModelBase _CurrentPage;
@@ -39,7 +37,6 @@ public class CookMainViewModel : ViewModelBase
     public CookMainViewModel()
     {
         _CurrentPage = Pages[0];
-        AuthUserNow = AuthorizationViewModel.AuthUser;
         
         ExitProfile = ReactiveCommand.Create<Window>(ExitProfileImpl);
 
@@ -47,13 +44,10 @@ public class CookMainViewModel : ViewModelBase
         OpenOrdersCookPage = ReactiveCommand.Create(OpenOrdersCookPageImpl, canOpenOrdersCookPageViewModel);
         var canOpenProfilePage = this.WhenAnyValue(x => x.CurrentPage.OpenProfilePage);
         OpenProfilePage = ReactiveCommand.Create(OpenProfilePageImpl, canOpenProfilePage);
-        
-        AuthUserNow = AuthorizationViewModel.AuthUser;
     }
 
     private void ExitProfileImpl(Window obj)
     {
-        AuthUserNow = null;
         AuthorizationView av = new AuthorizationView();
         AuthorizationViewModel.AuthUser = null;
         av.Show();

@@ -159,3 +159,4 @@ C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\obj\Debug\net8.0\KFC.genrunt
 C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\obj\Debug\net8.0\ref\KFC.dll
 C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\obj\Debug\net8.0\Interop.Microsoft.Office.Interop.Excel.dll
 C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\obj\Debug\net8.0\KFC.csproj.ResolveComReference.cache
+C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\obj\Debug\net8.0\KFC.sourcelink.json

@@ -80,6 +80,18 @@ public class OrdersPageViewModel : PageViewModelBase
         protected set => throw new NotSupportedException();
     }
     
+    public override bool OpenNewOrderWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
+    public override bool OpenOrdersWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
 
     public OrdersPageViewModel()
     {

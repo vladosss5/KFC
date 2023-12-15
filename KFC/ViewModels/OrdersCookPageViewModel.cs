@@ -72,10 +72,24 @@ public class OrdersCookPageViewModel : PageViewModelBase
         get => true;
         protected set => throw new NotSupportedException();
     }
+    
+    public override bool OpenNewOrderWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
+    
+    public override bool OpenOrdersWaiterPage
+    {
+        get => true;
+        protected set => throw new NotSupportedException();
+    }
 
 
     public OrdersCookPageViewModel()
     {
+        OpenOrdersCookPage = false;
+        
         Dishes = new ObservableCollection<Dish>(Helper.GetContext().Dishes.ToList());
         OrderDishes = new ObservableCollection<OrderDish>(Helper.GetContext().OrderDishes.ToList());
         GetOrder.AddRange(Helper.GetContext().Orders.Where(x => x.Status == "Принят").ToList());
