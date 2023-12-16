@@ -52,15 +52,15 @@ public class WaiterMainViewModel : ViewModelBase
         av.Show();
         obj.Close();
     }
+    
+    private void OpenOrdersWaiterPageImpl()
+    {
+        CurrentPage = Pages[0];
+    }
 
     private void OpenNewOrderPageImpl()
     {
         CurrentPage = Pages[1];
-    }
-
-    private void OpenOrdersWaiterPageImpl()
-    {
-        CurrentPage = Pages[0];
     }
     
     private void OpenProfilePageImpl()
