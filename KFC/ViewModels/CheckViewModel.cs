@@ -33,6 +33,7 @@ public class CheckViewModel : ViewModelBase
     {
         CheckOrder = NewOrderPageViewModel.OrderToCheck;
         Dishes = new ObservableCollection<Dish>(Helper.GetContext().Dishes.ToList());
-        OrderDishes = new ObservableCollection<OrderDish>(Helper.GetContext().OrderDishes.ToList());
+        OrderDishes = new ObservableCollection<OrderDish>(Helper.GetContext().OrderDishes
+            .Where(x => x.IdOrder == CheckOrder.IdOrder).ToList());
     }
 }

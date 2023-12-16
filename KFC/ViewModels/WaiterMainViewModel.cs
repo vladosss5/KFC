@@ -1,10 +1,13 @@
-﻿using System.Reactive;
+﻿using System;
+using System.IO;
+using System.Reactive;
 using System.Windows.Input;
 using Avalonia.Controls;
 using KFC.Views;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
 using ReactiveUI;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace KFC.ViewModels;
 
@@ -70,6 +73,6 @@ public class WaiterMainViewModel : ViewModelBase
     
     private void CreateReportImpl(Window obj)
     {
-        MessageBoxManager.GetMessageBoxStandard("Ошибка", "Тут пока нихуя нет", ButtonEnum.Ok, Icon.Error).ShowAsync();
+        
     }
 }

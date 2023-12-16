@@ -112,9 +112,8 @@ public class NewOrderPageViewModel : PageViewModelBase
 
     private void AcceptOrderImpl(Window obj)
     {
-        CheckView cv = new CheckView();
         Order newOrder = new Order();
-
+        UsersOrder newUsersOrder = new UsersOrder();
         var selectDishes = Dishes.Where(x => x.SelectDish == true);
 
         newOrder.Place = Place;
@@ -123,14 +122,22 @@ public class NewOrderPageViewModel : PageViewModelBase
         newOrder.Status = "Принят";
         newOrder.TypePayment = "Нет";
         newOrder.CountClient = CountClient;
-        newOrder.OrderDishes = selectDishes.Select(x => new OrderDish() 
-                { IdDishNavigation = x, Count = x.CountDishes }).ToList();
-        // newOrder.UsersOrders = 
+        newOrder.OrderDishes = selectDishes.Select(x => new OrderDish()
+            { IdDishNavigation = x, Count = x.CountDishes }).ToList();
+        
         OrderToCheck = newOrder;
+        
+        var selectOrder = Helper.GetContext().Orders.OrderBy(f => f.DateAndTime).Last();
+        newUsersOrder.IdOrder = selectOrder.IdOrder;
+        newUsersOrder.IdUser = AuthorizationViewModel.AuthUser.IdUser; 
+        
         Helper.GetContext().Orders.Add(newOrder);
+        Helper.GetContext().UsersOrders.Add(newUsersOrder);
         Helper.GetContext().UpdateRange();
         Helper.GetContext().SaveChanges();
+       
         newOrder = null;
+        CheckView cv = new CheckView();
         cv.Show();
     }
 }

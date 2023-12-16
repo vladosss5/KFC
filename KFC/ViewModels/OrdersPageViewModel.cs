@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using KFC.Models;
+using KFC.Views;
 using ReactiveUI;
 
 namespace KFC.ViewModels;
@@ -109,5 +110,7 @@ public class OrdersPageViewModel : PageViewModelBase
     public void InfoOrderImpl(Order order)
     {
         SelectOrder = order;
+        OrderInfoView oiv = new OrderInfoView();
+        oiv.Show();
     }
 }

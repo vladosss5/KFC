@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using Avalonia.Controls;
@@ -16,6 +17,7 @@ public class OrderInfoViewModel : ViewModelBase
     private ObservableCollection<Dish> _dishes;
     private ObservableCollection<User> _users;
     private ObservableCollection<UsersOrder> _usersOrders;
+    private string _selectedValue;
 
     private static Order _selectOrder = new Order();
     
@@ -51,20 +53,32 @@ public class OrderInfoViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _usersOrders, value);
     }
     
+    public string SelectedValue
+    {
+        get => _selectedValue;
+        set => this.RaiseAndSetIfChanged(ref _selectedValue, value);
+    }
+    
     public ReactiveCommand<Window, Unit> Save { get; }
     public ReactiveCommand<Window, Unit> Delete { get; }
     public ReactiveCommand<Window, Unit> Cancel { get; }
+    
+    public List<string> ComboBoxValues { get; }
     
     public OrderInfoViewModel()
     {
         SelectOrder = OrdersPageViewModel.SelectOrder;
         var hgt = Helper.GetContext();
-        OrderDishes = new ObservableCollection<OrderDish>(hgt.OrderDishes.ToList());
+        OrderDishes = new ObservableCollection<OrderDish>(hgt.OrderDishes
+            .Where(x => x.IdOrder == SelectOrder.IdOrder).ToList());
         Dishes = new ObservableCollection<Dish>(hgt.Dishes.ToList());
         Users = new ObservableCollection<User>(hgt.Users.ToList());
         UsersOrders = new ObservableCollection<UsersOrder>(hgt.UsersOrders.ToList());
+        
+        ComboBoxValues = new List<string> { "Нет", "Карта", "Наличные" };
+        SelectedValue = ComboBoxValues.Where(x => x == SelectOrder.TypePayment).FirstOrDefault();
 
-        Save = ReactiveCommand.Create<Window>(Saveimpl);
+        Save = ReactiveCommand.Create<Window>(SaveImpl);
         Delete = ReactiveCommand.Create<Window>(DeleteImpl);
         Cancel = ReactiveCommand.Create<Window>(Cancelimpl);
     }
@@ -83,14 +97,16 @@ public class OrderInfoViewModel : ViewModelBase
         db.UsersOrders.RemoveRange(userOrders);
         db.OrderDishes.RemoveRange(orderDish);
         db.SaveChanges();
-        MessageBoxManager.GetMessageBoxStandard("Успех", "Заказ удалён", ButtonEnum.Ok, Icon.Success).ShowAsync();
+        MessageBoxManager.GetMessageBoxStandard("Успех", $"Заказ №{SelectOrder.IdOrder} удалён", ButtonEnum.Ok, Icon.Success).ShowAsync();
         obj.Close();
     }
 
-    private void Saveimpl(Window obj)
+    private void SaveImpl(Window obj)
     {
+        SelectOrder.TypePayment = SelectedValue;
         db.Orders.Update(SelectOrder);
-        MessageBoxManager.GetMessageBoxStandard("Успех", "Заказ изменён", ButtonEnum.Ok, Icon.Success).ShowAsync();
+        db.SaveChanges();
+        MessageBoxManager.GetMessageBoxStandard("Успех", $"Заказ №{SelectOrder.IdOrder} сохранён", ButtonEnum.Ok, Icon.Success).ShowAsync();
         obj.Close();
     }
 }

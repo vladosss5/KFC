@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KFC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46f6d76e7e496f0851cc390b2b7febb85cf5038d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb515d612f8dab227905fbdae74beb91d7f6c09c")]
 [assembly: System.Reflection.AssemblyProductAttribute("KFC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KFC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

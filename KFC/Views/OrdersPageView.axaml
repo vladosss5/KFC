@@ -43,7 +43,7 @@
                                         Command="{Binding ElementName=ThisPage, Path=InfoOrder}" 
                                         CommandParameter="{Binding }"
                                         CornerRadius="50">
-                                    <Image Height="15" Width="15" Source="/Assets/delete.png"/>
+                                    <Image Height="15" Width="15" Source="/Assets/info.png"/>
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

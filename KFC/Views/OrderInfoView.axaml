@@ -15,13 +15,21 @@
         
         <Grid Margin="10">
                 <StackPanel Grid.Row="0">
-                        <TextBlock Text="{Binding SelectOrder.IdOrder}"/>
-                        <TextBlock Text="{Binding SelectOrder.Status}"/>
-                        <TextBlock Text="{Binding SelectOrder.DateAndTime}"/>
-                        <TextBlock Text="{Binding SelectOrder.TypePayment}"/>
-                        <TextBox Text="{Binding SelectOrder.CountClient}"/>
-                        <TextBox Text="{Binding SelectOrder.Price}"/>
-                        <TextBox Text="{Binding SelectOrder.Place}"/>
+                        <TextBlock Text="{Binding SelectOrder.IdOrder}"
+                                   FontSize="25" Margin="5"/>
+                        <TextBlock Text="{Binding SelectOrder.Status}"
+                                   FontSize="25" Margin="5"/>
+                        <TextBlock Text="{Binding SelectOrder.DateAndTime}"
+                                   FontSize="25" Margin="5"/>
+                        <ComboBox ItemsSource="{Binding ComboBoxValues}" 
+                                  SelectedItem="{Binding SelectedValue, Mode=TwoWay}" 
+                                  FontSize="25" Margin="5"/>
+                        <TextBox Text="{Binding SelectOrder.CountClient}"
+                                 FontSize="25" Margin="5"/>
+                        <TextBox Text="{Binding SelectOrder.Price}"
+                                 FontSize="25" Margin="5"/>
+                        <TextBox Text="{Binding SelectOrder.Place}"
+                                 FontSize="25" Margin="5"/>
                         <DataGrid Name="DishesGrid" 
                                   ItemsSource="{Binding OrderDishes}">
                                 <DataGrid.Columns>
@@ -34,21 +42,24 @@
                 </StackPanel>
                 
                 <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Удалить"/>
+                        <Button Command="{ReflectionBinding Delete}"
+                                CommandParameter="{ReflectionBinding ElementName=ThisWindow}">
+                                <StackPanel Orientation="Horizontal" MaxHeight="30" Margin="5">
+                                        <TextBlock Text="Удалить" VerticalAlignment="Center" Margin="3"/>
                                         <Image Source="/Assets/TrashBox.png"/>
                                 </StackPanel>
                         </Button>
-                        <Button>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Отмена"/>
+                        <Button Command="{ReflectionBinding Cancel}"
+                                CommandParameter="{ReflectionBinding ElementName=ThisWindow}">
+                                <StackPanel Orientation="Horizontal" MaxHeight="30" Margin="5">
+                                        <TextBlock Text="Отмена" VerticalAlignment="Center" Margin="3"/>
                                         <Image Source="/Assets/cancel.png"/>
                                 </StackPanel>
                         </Button>
-                        <Button>
-                                <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="Сохранить"/>
+                        <Button Command="{ReflectionBinding Save}"
+                                CommandParameter="{ReflectionBinding ElementName=ThisWindow}">
+                                <StackPanel Orientation="Horizontal" MaxHeight="30" Margin="5">
+                                        <TextBlock Text="Сохранить" VerticalAlignment="Center" Margin="3"/>
                                         <Image Source="/Assets/ok.png"/>
                                 </StackPanel>
                         </Button>

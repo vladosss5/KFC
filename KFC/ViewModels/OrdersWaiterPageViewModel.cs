@@ -87,14 +87,19 @@ public class OrdersWaiterPageViewModel : PageViewModelBase
 
         foreach (var uo in userOrders)
         {
-            WaiterOrders.Add(Helper.GetContext().Orders.
-                Where(x => x.IdOrder == uo.IdOrder 
-                           && x.DateAndTime.Day == DateTime.Now.Day).FirstOrDefault());
+            var waiterOrder = Helper.GetContext().Orders.
+                Where(x => x.IdOrder == uo.IdOrder && x.DateAndTime.Day == DateTime.Now.Day).FirstOrDefault();
+            
+            if (waiterOrder != null)
+            {
+                WaiterOrders.Add(waiterOrder);
+            }
         }
     }
 
     public void InfoOrderImpl(Order order)
     {
-        throw new NotImplementedException();
+        OrdersPageViewModel opvm = new OrdersPageViewModel();
+        opvm.InfoOrderImpl(order);
     }
 }
