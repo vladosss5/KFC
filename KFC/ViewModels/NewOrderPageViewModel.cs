@@ -127,11 +127,14 @@ public class NewOrderPageViewModel : PageViewModelBase
         
         OrderToCheck = newOrder;
         
+        Helper.GetContext().Orders.Add(newOrder);
+        Helper.GetContext().UpdateRange();
+        Helper.GetContext().SaveChanges();
+        
         var selectOrder = Helper.GetContext().Orders.OrderBy(f => f.DateAndTime).Last();
         newUsersOrder.IdOrder = selectOrder.IdOrder;
         newUsersOrder.IdUser = AuthorizationViewModel.AuthUser.IdUser; 
-        
-        Helper.GetContext().Orders.Add(newOrder);
+
         Helper.GetContext().UsersOrders.Add(newUsersOrder);
         Helper.GetContext().UpdateRange();
         Helper.GetContext().SaveChanges();

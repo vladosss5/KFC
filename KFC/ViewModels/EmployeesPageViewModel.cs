@@ -220,6 +220,7 @@ public class EmployeesPageViewModel : PageViewModelBase
             File.Copy(ImagePath, DestImagePath, true);
             File.Copy(ContractPath, DestContractPath, true);
             Employees.Add(_newUser);
+            _newUser.IdUser = 0;
             Helper.GetContext().Users.Add(_newUser);
             Helper.GetContext().SaveChanges();
             MessageBoxManager.GetMessageBoxStandard("Успех", "Сотрудник добавлен", ButtonEnum.Ok, Icon.Success).ShowAsync();

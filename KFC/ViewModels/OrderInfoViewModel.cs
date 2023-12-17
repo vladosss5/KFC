@@ -103,7 +103,12 @@ public class OrderInfoViewModel : ViewModelBase
 
     private void SaveImpl(Window obj)
     {
-        SelectOrder.TypePayment = SelectedValue;
+        if (SelectedValue != "Нет")
+        {
+            SelectOrder.TypePayment = SelectedValue;
+            SelectOrder.Status = "Оплачено";
+        }
+        
         db.Orders.Update(SelectOrder);
         db.SaveChanges();
         MessageBoxManager.GetMessageBoxStandard("Успех", $"Заказ №{SelectOrder.IdOrder} сохранён", ButtonEnum.Ok, Icon.Success).ShowAsync();
