@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Reflection;
 using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using MsBox.Avalonia;
+using MsBox.Avalonia.Enums;
 
 namespace KFC;
 
@@ -30,8 +33,18 @@ public class BitmapAssetValueConverter : IValueConverter
                 string assemblyName = Assembly.GetEntryAssembly().GetName().Name;
                 uri = new Uri($"avares://{assemblyName}/{rawUri}");
             }
-            
-            var asset = AssetLoader.Open(uri);
+
+            Stream asset = null;
+
+            try
+            {
+                asset = AssetLoader.Open(uri);
+            }
+            catch (Exception e)
+            {
+                MessageBoxManager.GetMessageBoxStandard("Ошибка", $"{e}", ButtonEnum.Ok, Icon.Error).ShowAsync();
+            }
+           
 
             return new Bitmap(asset);
         }
