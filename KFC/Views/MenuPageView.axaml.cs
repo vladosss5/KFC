@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using KFC.Models;
+using KFC.Core.Models;
 using KFC.ViewModels;
 
 namespace KFC.Views;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive;
 using Avalonia.Controls;
-using KFC.Models;
+using KFC.Core.Models;
 using KFC.Views;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;

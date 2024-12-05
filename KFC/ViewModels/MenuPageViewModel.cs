@@ -2,8 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
-using KFC.Context;
-using KFC.Models;
+using KFC.Core.Models;
+using KFC.Data.Context;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
 using ReactiveUI;

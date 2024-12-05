@@ -2,8 +2,8 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using DynamicData;
-using KFC.Context;
-using KFC.Models;
+using KFC.Core.Models;
+using KFC.Data.Context;
 using ReactiveUI;
 
 namespace KFC.ViewModels;

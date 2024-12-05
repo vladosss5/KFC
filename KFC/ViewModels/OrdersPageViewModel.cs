@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using KFC.Models;
+using KFC.Core.Models;
 using KFC.Views;
 using ReactiveUI;
 

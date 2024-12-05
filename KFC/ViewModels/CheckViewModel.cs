@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
-using KFC.Models;
+using KFC.Core.Models;
 using ReactiveUI;
 
 namespace KFC.ViewModels;

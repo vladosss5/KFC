@@ -5,8 +5,7 @@ using System.Reactive;
 using System.Windows.Input;
 using Avalonia.Controls;
 using DynamicData;
-using KFC.Context;
-using KFC.Models;
+using KFC.Data.Context;
 using KFC.Views;
 using ReactiveUI;
 

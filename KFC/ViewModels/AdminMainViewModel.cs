@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reactive;
 using System.Windows.Input;
 using Avalonia.Controls;
-using KFC.Models;
+using KFC.Core.Models;
 using KFC.Views;
 using ReactiveUI;
 using Excel = Microsoft.Office.Interop.Excel;

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace KFC.Models;
+﻿namespace KFC.Core.Models;
 
 public partial class OrderDish
 {

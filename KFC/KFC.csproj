@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
 		<AvaloniaResource Include="AssetsUser\**" />
     </ItemGroup>
@@ -37,18 +36,10 @@
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.6" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.6" />
         <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.14" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.14">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.14" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.14">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Npgsql" Version="7.0.6" />
-        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
-        <PackageReference Include="SQLite" Version="3.13.0" />
+    </ItemGroup>
+
+
+    <ItemGroup>
+      <ProjectReference Include="..\KFC.Data\KFC.Data.csproj" />
     </ItemGroup>
 </Project>

@@ -1,3 +1,5 @@
 .idea
-KFC/obj
-KFC/bin
+*obj
+*bin
+*.vs
+*.DotSettings.user
