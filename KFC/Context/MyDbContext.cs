@@ -35,7 +35,7 @@ public partial class MyDbContext : DbContext
     public virtual DbSet<WorkShift> WorkShifts { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseNpgsql("Server=localhost;port=5432;user id=postgres;password=toor;database=KFas;");
+        => optionsBuilder.UseSqlite("Data Source=identifier.sqlite;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -116,12 +116,12 @@ public partial class MyDbContext : DbContext
 
             entity.HasOne(d => d.IdPostNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdPost)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.ClientCascade)
                 .HasConstraintName("Users_Posts_IdPost_fk");
 
             entity.HasOne(d => d.IdStatusNavigation).WithMany(p => p.Users)
                 .HasForeignKey(d => d.IdStatus)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("Users_StatusesUser_IdStatus_fk");
         });
 
@@ -141,7 +141,7 @@ public partial class MyDbContext : DbContext
 
             entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UserShifts)
                 .HasForeignKey(d => d.IdUser)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("UserShift_Users_IdUser_fk");
         });
 
@@ -156,9 +156,10 @@ public partial class MyDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("UsersOrders_Orders_IdOrder_fk");
 
-            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UsersOrders)
+            entity.HasOne(d => d.IdUserNavigation)
+                .WithMany(p => p.UsersOrders)
                 .HasForeignKey(d => d.IdUser)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.ClientCascade)
                 .HasConstraintName("UsersOrders_Users_IdUser_fk");
         });
 

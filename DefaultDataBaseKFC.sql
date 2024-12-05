@@ -25,7 +25,7 @@ CREATE DATABASE "KFas" WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE_PROVID
 
 ALTER DATABASE "KFas" OWNER TO postgres;
 
-\connect "KFas"
+connect "KFas"
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;

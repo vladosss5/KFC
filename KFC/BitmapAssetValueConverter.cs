@@ -34,19 +34,15 @@ public class BitmapAssetValueConverter : IValueConverter
                 uri = new Uri($"avares://{assemblyName}/{rawUri}");
             }
 
-            Stream asset = null;
-
             try
             {
-                asset = AssetLoader.Open(uri);
+                var asset = AssetLoader.Open(uri);
+                return new Bitmap(asset);
             }
             catch (Exception e)
             {
                 MessageBoxManager.GetMessageBoxStandard("Ошибка", $"{e}", ButtonEnum.Ok, Icon.Error).ShowAsync();
             }
-           
-
-            return new Bitmap(asset);
         }
 
         throw new NotSupportedException();

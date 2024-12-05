@@ -39,7 +39,7 @@ public class EmployeesPageViewModel : PageViewModelBase
     public string DestContractPath;
     public string ImageProgectPath;
     public string ContractProgectPath;
-    public string AssetsUserPath = @"C:\Users\v-pc\Documents\yчёба\8лаба\KFC\KFC\AssetsUser";
+    public string AssetsUserPath = @"C:\Users\Vpc\Documents\yчёба\8лаба\KFC\KFCAssetsUser";
     
     private MyDbContext db = new MyDbContext();
     
