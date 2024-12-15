@@ -39,7 +39,7 @@ public class EmployeesPageViewModel : PageViewModelBase
     public string DestContractPath;
     public string ImageProgectPath;
     public string ContractProgectPath;
-    public string AssetsUserPath = @"C:\Users\Vpc\Documents\yчёба\8лаба\KFC\KFCAssetsUser";
+    public string AssetsUserPath;
     
     private MyDbContext db = new MyDbContext();
     
@@ -160,6 +160,8 @@ public class EmployeesPageViewModel : PageViewModelBase
 
     public EmployeesPageViewModel()
     {
+        var currentDirectory = Directory.GetCurrentDirectory();
+        AssetsUserPath = currentDirectory.Replace(@"\bin\Debug\net8.0", @"\AssetsUser");
         OpenEmployeesPage = false;
         Employees = new ObservableCollection<User>(Helper.GetContext().Users.ToList());
         Posts = new ObservableCollection<Post>(Helper.GetContext().Posts.ToList());

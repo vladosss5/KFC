@@ -92,7 +92,7 @@ public class OrdersCookPageViewModel : PageViewModelBase
         
         Dishes = new ObservableCollection<Dish>(Helper.GetContext().Dishes.ToList());
         OrderDishes = new ObservableCollection<OrderDish>(Helper.GetContext().OrderDishes.ToList());
-        GetOrder.AddRange(Helper.GetContext().Orders.Where(x => x.Status == "Принят").ToList());
+        GetOrder.AddRange(Helper.GetContext().Orders.Where(x => x.Status == "Оплачено").ToList());
         SetOrder.AddRange(Helper.GetContext().Orders.
             Where(o => (o.Status == "Готовится") && o.DateAndTime.Day == DateTime.Now.Day));
     }
